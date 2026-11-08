@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>مرتضی جهانی مقدم | شاعر، مجری و تهیه‌کننده</title>
+  
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.svg">
+  
+<meta name="description" content="وب‌سایت شخصی مرتضی جهانی مقدم؛ آرشیو شعر، اجراهای رسانه‌ای و پروژه‌های تهیه‌کنندگی" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&family=Aref+Ruqaa:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --paper:#f4ede0;
+    --paper-light:#faf5e9;
+    --paper-dark:#e8dcc3;
+    --ink:#0F3D2E;
+    --ink-soft:#1A5C45;
+    --ink-muted:#5A8A72;
+    --accent:#8B2635;
+    --gold:#B8860B;
+    --gold-soft:#C9A961;
+    --border:#D4C5A9;
+    --shadow: 0 10px 40px rgba(15,61,46,.08);
+    --shadow-lg: 0 20px 60px rgba(15,61,46,.15);
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Vazirmatn', sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.9;
+    font-weight:400;
+    overflow-x:hidden;
+  }
+
+  .container{max-width:1200px;margin:0 auto;padding:0 2rem;position:relative;z-index:1}
+
+  nav{position:fixed;top:0;right:0;left:0;background:rgba(244,237,224,.95);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border);z-index:100;transition:all .3s}
+  .nav-inner{display:flex;justify-content:space-between;align-items:center;padding:1rem 2rem;max-width:1200px;margin:0 auto}
+  .logo{font-family:'Aref Ruqaa', serif;font-size:1.4rem;font-weight:700;color:var(--ink);letter-spacing:3px;white-space:nowrap}
+  .logo span{color:var(--accent);margin:0 2px}
+  .nav-links{display:flex;gap:2rem;list-style:none}
+  .nav-links a{color:var(--ink-soft);text-decoration:none;font-size:.95rem;font-weight:500;position:relative;transition:color .3s}
+  .nav-links a::after{content:'';position:absolute;bottom:-6px;right:0;width:0;height:1px;background:var(--accent);transition:width .3s}
+  .nav-links a:hover{color:var(--accent)}
+  .nav-links a:hover::after{width:100%}
+  .menu-toggle{display:none;background:none;border:none;cursor:pointer;font-size:1.5rem;color:var(--ink)}
+
+  .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:8rem 2rem 4rem;position:relative;text-align:center}
+  .hero-content{max-width:100%}
+  .hero-greeting{font-family:'Vazirmatn', sans-serif;font-size:1.1rem;color:var(--accent);margin-bottom:2rem;opacity:0;animation:fadeUp .8s .2s forwards;letter-spacing:2px;font-weight:500}
+  .hero h1{font-family:'Aref Ruqaa', serif;font-size:clamp(5rem, 15vw, 14rem);font-weight:700;line-height:1.1;color:var(--ink);margin-bottom:2rem;opacity:0;animation:fadeUp .8s .4s forwards;letter-spacing:-2px}
+  .hero h1 .highlight{color:var(--accent);position:relative;display:inline-block}
+  .hero h1 .highlight::after{content:'';position:absolute;bottom:10px;right:0;left:0;height:12px;background:var(--gold-soft);opacity:.3;z-index:-1}
+  .hero-subtitle{font-size:1.2rem;color:var(--ink-muted);max-width:600px;margin:0 auto 3rem;opacity:0;animation:fadeUp .8s .6s forwards}
+
+  .desk{display:grid;grid-template-columns:repeat(3, 1fr);gap:1.2rem;margin-top:3rem;opacity:0;animation:fadeUp .8s .8s forwards}
+  .desk-item{background:var(--paper-light);border:1px solid var(--border);padding:1.8rem 1rem;border-radius:4px;cursor:pointer;transition:all .4s cubic-bezier(.2,.8,.2,1);text-decoration:none;color:var(--ink);position:relative;overflow:hidden}
+  .desk-item::before{content:'';position:absolute;top:0;right:0;width:100%;height:3px;background:linear-gradient(90deg, var(--accent), var(--gold));transform:scaleX(0);transform-origin:right;transition:transform .4s}
+  .desk-item:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);background:#fff}
+  .desk-item:hover::before{transform:scaleX(1)}
+  .desk-icon{width:48px;height:48px;margin:0 auto 1rem;color:var(--accent)}
+  .desk-item h3{font-family:'Aref Ruqaa', serif;font-size:1.2rem;margin-bottom:.5rem}
+  .desk-item p{font-size:.85rem;color:var(--ink-muted);line-height:1.6}
+
+  .panorama{position:relative;height:70vh;min-height:400px;overflow:hidden;background:var(--ink);margin:0}
+  .panorama::before,
+  .panorama::after{
+    content:'';position:absolute;top:0;bottom:0;width:120px;z-index:3;pointer-events:none;
+  }
+  .panorama::before{right:0;background:linear-gradient(to left, var(--ink) 0%, transparent 100%)}
+  .panorama::after{left:0;background:linear-gradient(to right, var(--ink) 0%, transparent 100%)}
+  
+  .pan-placeholder{
+    position:absolute;
+    top:0;right:0;
+    width:100%;height:100%;
+    background:linear-gradient(135deg, var(--ink) 0%, var(--ink-soft) 50%, var(--ink) 100%);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    z-index:1;
+  }
+  .pan-placeholder::before{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:
+      repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 35px,
+        rgba(201,169,97,.03) 35px,
+        rgba(201,169,97,.03) 70px
+      );
+  }
+  .pan-placeholder-icon{
+    width:120px;height:120px;
+    border:2px dashed var(--gold-soft);
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    color:var(--gold-soft);
+    opacity:.4;
+  }
+  .pan-placeholder-icon svg{width:48px;height:48px}
+  
+  .pan-image{
+    position:absolute;
+    top:0;right:0;
+    height:100%;
+    width:auto;
+    min-width:250%;
+    object-fit:cover;
+    object-position:center;
+    will-change:transform;
+    transform:translateX(0);
+    filter:brightness(.9) contrast(1.05) saturate(.95);
+    z-index:2;
+  }
+  .pan-image{opacity:0;transition:opacity .4s}
+  .pan-image.loaded{opacity:1}
+  
+  .pan-overlay{
+    position:absolute;inset:0;
+    background:linear-gradient(180deg, rgba(15,61,46,.3) 0%, rgba(15,61,46,.1) 40%, rgba(15,61,46,.5) 100%);
+    z-index:4;
+    display:flex;align-items:center;justify-content:center;
+    pointer-events:none;
+  }
+  .pan-caption{
+    font-family:'Aref Ruqaa', serif;
+    font-size:clamp(2rem, 5vw, 4rem);
+    color:var(--paper);
+    text-align:center;
+    text-shadow:0 4px 30px rgba(0,0,0,.5);
+    opacity:.9;
+    letter-spacing:2px;
+    padding:0 2rem;
+  }
+  .pan-caption small{
+    display:block;
+    font-family:'Vazirmatn', sans-serif;
+    font-size:1rem;
+    color:var(--gold-soft);
+    letter-spacing:3px;
+    margin-top:1rem;
+    font-weight:500;
+  }
+  .pan-scroll-hint{
+    position:absolute;bottom:30px;left:50%;transform:translateX(-50%);
+    z-index:5;color:var(--paper);font-size:.9rem;letter-spacing:2px;opacity:.7;
+    display:flex;flex-direction:column;align-items:center;gap:.5rem;
+    animation:hintFade 2s ease-in-out infinite;
+  }
+  .pan-scroll-hint svg{width:20px;height:20px;animation:hintMove 2s ease-in-out infinite}
+  @keyframes hintFade{0%,100%{opacity:.4}50%{opacity:.9}}
+  @keyframes hintMove{0%,100%{transform:translateX(0)}50%{transform:translateX(-10px)}}
+
+  section{padding:6rem 0;position:relative}
+  .section-header{margin-bottom:3.5rem;text-align:center}
+  .section-label{display:inline-block;font-size:.85rem;letter-spacing:3px;color:var(--accent);text-transform:uppercase;margin-bottom:.8rem;font-weight:600}
+  .section-title{font-family:'Aref Ruqaa', serif;font-size:clamp(2rem, 4vw, 2.8rem);color:var(--ink);margin-bottom:1rem}
+  .section-desc{color:var(--ink-muted);max-width:600px;margin:0 auto}
+  .divider{width:60px;height:2px;background:linear-gradient(90deg, transparent, var(--accent), transparent);margin:1.5rem auto}
+
+  .poems-grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));gap:2rem}
+  .poem-card{background:var(--paper-light);border:1px solid var(--border);padding:2.5rem 2rem;border-radius:4px;position:relative;transition:all .4s}
+  .poem-card::before{content:'❝';position:absolute;top:-20px;right:20px;font-family:'Aref Ruqaa', serif;font-size:5rem;color:var(--gold-soft);opacity:.4;line-height:1}
+  .poem-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+  .poem-title{font-family:'Aref Ruqaa', serif;font-size:1.4rem;color:var(--accent);margin-bottom:1.2rem}
+  .poem-text{font-family:'Vazirmatn', sans-serif;font-size:.9rem;font-weight:500;line-height:2.2;color:var(--ink-soft);text-align:center;margin-bottom:0}
+
+  .showreel{background:var(--ink);color:var(--paper);margin:0 -2rem;padding:6rem 2rem;position:relative;overflow:hidden}
+  .showreel::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 0%, rgba(184,134,11,.15), transparent 60%)}
+  .showreel .section-title{color:var(--paper)}
+  .showreel .section-desc{color:rgba(244,237,224,.7)}
+  .showreel .section-label{color:var(--gold-soft)}
+  .video-wrapper{max-width:900px;margin:3rem auto 0;aspect-ratio:16/9;background:#000;border-radius:8px;overflow:hidden;position:relative;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+  .video-wrapper iframe{width:100%;height:100%;border:0}
+
+  .projects-grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:2rem}
+  .project-card{background:var(--paper-light);border:1px solid var(--border);border-radius:4px;overflow:hidden;transition:all .4s}
+  .project-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
+  .project-thumb{
+    aspect-ratio:16/10;
+    background:linear-gradient(135deg, var(--ink), var(--ink-soft));
+    position:relative;
+    display:flex;align-items:center;justify-content:center;
+    overflow:hidden;
+  }
+  .project-thumb img{
+    width:100%;height:100%;
+    object-fit:cover;
+    transition:transform .4s;
+  }
+  .project-card:hover .project-thumb img{transform:scale(1.05)}
+  .project-thumb::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at center, transparent, rgba(0,0,0,.3))}
+  .project-body{padding:1.8rem}
+  .project-tag{display:inline-block;font-size:.75rem;letter-spacing:2px;color:var(--accent);font-weight:600;margin-bottom:.8rem}
+  .project-title{font-family:'Aref Ruqaa', serif;font-size:1.4rem;margin-bottom:.8rem;color:var(--ink)}
+  .project-desc{font-size:.9rem;color:var(--ink-muted);margin-bottom:1rem;line-height:1.8}
+  .project-meta{display:flex;gap:1rem;flex-wrap:wrap;font-size:.8rem;color:var(--ink-muted);padding-top:1rem;border-top:1px dashed var(--border)}
+
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;max-width:900px;margin:0 auto}
+  .contact-info h3{font-family:'Aref Ruqaa', serif;font-size:1.6rem;margin-bottom:1rem}
+  .contact-info p{color:var(--ink-muted);margin-bottom:2rem}
+  .contact-item{display:flex;align-items:center;gap:1rem;padding:1rem 0;border-bottom:1px dashed var(--border)}
+  .contact-icon{width:40px;height:40px;border-radius:50%;background:var(--paper-dark);display:flex;align-items:center;justify-content:center;color:var(--accent);flex-shrink:0}
+  .contact-item strong{display:block;font-size:.85rem;color:var(--ink-muted);font-weight:500}
+  .contact-item span{color:var(--ink);font-weight:500}
+  .contact-form{background:var(--paper-light);padding:2.5rem;border:1px solid var(--border);border-radius:4px;position:relative}
+  .form-group{margin-bottom:1.2rem}
+  .form-group label{display:block;font-size:.85rem;color:var(--ink-muted);margin-bottom:.5rem;font-weight:500}
+  .form-group input, .form-group textarea{width:100%;padding:.9rem 1rem;background:var(--paper);border:1px solid var(--border);border-radius:4px;font-family:inherit;font-size:.95rem;color:var(--ink);transition:border-color .3s}
+  .form-group input:focus, .form-group textarea:focus{outline:none;border-color:var(--accent)}
+  .form-group textarea{resize:vertical;min-height:120px}
+
+  .btn{display:inline-flex;align-items:center;gap:.8rem;padding:1rem 2.2rem;background:var(--accent);color:#fff;text-decoration:none;border-radius:50px;font-weight:500;font-size:.95rem;transition:all .3s;border:none;cursor:pointer;font-family:inherit}
+  .btn:hover{background:var(--gold);transform:translateY(-2px);box-shadow:0 10px 30px rgba(184,134,11,.3)}
+
+  footer{background:var(--ink);color:var(--paper);padding:3rem 2rem 2rem;text-align:center;border-top:3px solid var(--accent)}
+  .footer-logo{font-family:'Aref Ruqaa', serif;font-size:1.6rem;margin-bottom:1rem;letter-spacing:2px}
+  .footer-logo span{color:var(--gold-soft)}
+  .social-links{display:flex;justify-content:center;gap:1rem;margin:1.5rem 0}
+  .social-links a{width:40px;height:40px;border-radius:50%;background:rgba(244,237,224,.1);display:flex;align-items:center;justify-content:center;color:var(--paper);text-decoration:none;transition:all .3s}
+  .social-links a:hover{background:var(--accent);transform:translateY(-3px)}
+  .copyright{font-size:.85rem;color:rgba(244,237,224,.5);margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid rgba(244,237,224,.1)}
+
+  @keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+  .reveal{opacity:0;transform:translateY(30px);transition:all .8s cubic-bezier(.2,.8,.2,1)}
+  .reveal.visible{opacity:1;transform:translateY(0)}
+
+  @media (max-width: 992px){
+    .desk{grid-template-columns:repeat(3, 1fr);gap:1rem}
+    .desk-item{padding:1.5rem .8rem}
+    .desk-item h3{font-size:1.1rem}
+    .desk-item p{font-size:.8rem}
+  }
+
+  @media (max-width: 768px){
+    .nav-links{
+      position:fixed;
+      top:70px;
+      right:0;
+      transform:translateX(100%);
+      flex-direction:column;
+      background:var(--paper-light);
+      width:75%;
+      height:calc(100vh - 70px);
+      padding:2rem 1.5rem;
+      gap:1.5rem;
+      transition:transform .3s ease;
+      box-shadow:-10px 0 30px rgba(0,0,0,.1);
+      overflow-y:auto;
+    }
+    .nav-links.open{transform:translateX(0)}
+    .nav-links a{font-size:1rem;padding:.5rem 0}
+    .menu-toggle{display:block}
+    .nav-inner{padding:.8rem 1.2rem}
+    .logo{font-size:1.15rem;letter-spacing:2px}
+    .hero{padding:6rem 1.2rem 3rem;min-height:auto}
+    .hero h1{font-size:clamp(2.8rem, 12vw, 4rem);margin-bottom:1.5rem}
+    .hero-greeting{font-size:1rem;margin-bottom:1.5rem}
+    .hero-subtitle{font-size:1rem;margin-bottom:2rem}
+    .desk{grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2rem}
+    .desk-item{padding:1.2rem .8rem}
+    .desk-icon{width:36px;height:36px;margin-bottom:.6rem}
+    .desk-item h3{font-size:1rem;margin-bottom:.3rem}
+    .desk-item p{font-size:.75rem}
+    section{padding:3.5rem 0}
+    .section-header{margin-bottom:2.5rem}
+    .section-title{font-size:clamp(1.6rem, 5vw, 2.2rem)}
+    .section-desc{font-size:.9rem}
+    .poems-grid{grid-template-columns:1fr;gap:1.2rem}
+    .poem-card{padding:1.8rem 1.2rem}
+    .poem-title{font-size:1.2rem;margin-bottom:1rem}
+    .poem-text{font-size:.85rem;line-height:2.1}
+    .poem-card::before{font-size:3.5rem;top:-15px;right:15px}
+    .panorama{height:50vh;min-height:280px}
+    .pan-image{min-width:300%}
+    .panorama::before,.panorama::after{width:50px}
+    .pan-caption{font-size:clamp(1.4rem, 5vw, 2.2rem);padding:0 1rem}
+    .pan-caption small{font-size:.85rem;letter-spacing:2px}
+    .pan-scroll-hint{bottom:15px;font-size:.8rem}
+    .showreel{margin:0 -1.2rem;padding:3.5rem 1.2rem}
+    .video-wrapper{margin-top:2rem}
+    .projects-grid{grid-template-columns:1fr;gap:1.2rem}
+    .project-body{padding:1.3rem}
+    .project-title{font-size:1.2rem}
+    .project-desc{font-size:.85rem}
+    .contact-grid{grid-template-columns:1fr;gap:2rem}
+    .contact-form{padding:1.8rem 1.2rem}
+    .contact-info h3{font-size:1.4rem}
+    .contact-item{padding:.8rem 0}
+    footer{padding:2.5rem 1.2rem 1.5rem}
+    .footer-logo{font-size:1.4rem}
+  }
+
+  @media (max-width: 480px){
+    .container{padding:0 1rem}
+    .hero h1{font-size:clamp(2.8rem, 12vw, 4rem)}
+    .desk{grid-template-columns:1fr;gap:.7rem}
+    .desk-item{padding:1rem;display:flex;align-items:center;gap:1rem;text-align:right}
+    .desk-icon{width:32px;height:32px;margin:0;flex-shrink:0}
+    .desk-item h3{font-size:.95rem;margin-bottom:.2rem}
+    .desk-item p{font-size:.75rem}
+    .poem-card{padding:1.5rem 1rem}
+    .poem-text{font-size:.8rem;line-height:2}
+    .panorama{height:40vh;min-height:240px}
+    .pan-caption{font-size:clamp(1.2rem, 6vw, 1.8rem)}
+    .project-meta{font-size:.75rem;gap:.6rem}
+    .contact-form{padding:1.5rem 1rem}
+    .form-group input, .form-group textarea{padding:.75rem .8rem;font-size:.9rem}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="logo">مرتضی<span>·</span>جهانی مقدم</div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">خانه</a></li>
+      <li><a href="#poetry">شعر</a></li>
+      <li><a href="#media">نمایه تصویری</a></li>
+      <li><a href="#production">تهیه‌کنندگی</a></li>
+      <li><a href="#contact">تماس</a></li>
+    </ul>
+    <button class="menu-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
+  </div>
+</nav>
+
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="hero-greeting">وبسایت شخصی مرتضی جهانی مقدم</div>
+    <h1>و در آغاز، <span class="highlight">کلمه</span> بود</h1>
+    <p class="hero-subtitle">شاعر، مجری و تهیه‌کننده؛ میکوشم جهانم را با روایت همراه کنم.</p>
+    <div class="desk">
+      <a href="#poetry" class="desk-item">
+        <svg class="desk-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
+        <h3>شعر و ادب</h3><p>آرشیو اشعار</p>
+      </a>
+      <a href="#media" class="desk-item">
+        <svg class="desk-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+        <h3>نمایه تصویری</h3><p>شعرخوانی و اجراها</p>
+      </a>
+      <a href="#production" class="desk-item">
+        <svg class="desk-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 6l10-4 10 4-10 4L2 6z"/><path d="M6 8v8c0 1 4 4 6 4s6-3 6-4V8"/><line x1="12" y1="10" x2="12" y2="20"/></svg>
+        <h3>تهیه‌کنندگی</h3><p>پروژه‌های رسانه‌ای</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="panorama" id="panorama">
+  <div class="pan-placeholder" id="panPlaceholder">
+    <div class="pan-placeholder-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+        <circle cx="8.5" cy="8.5" r="1.5"/>
+        <polyline points="21 15 16 10 5 21"/>
+      </svg>
+    </div>
+  </div>
+  <img 
+    src="31.png" 
+    alt="مرتضی جهانی مقدم" 
+    class="pan-image" 
+    id="panImage" 
+    onload="this.classList.add('loaded'); document.getElementById('panPlaceholder').style.display='none'; updatePanorama();"
+    onerror="console.log('Error loading 31.png')"
+  >
+  <div class="pan-overlay">
+    <div class="pan-caption">
+      جهانی مقدم
+      <small>کلمه آغاز روایت هاست</small>
+    </div>
+  </div>
+  <div class="pan-scroll-hint" id="panHint">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <polyline points="15 18 9 12 15 6"/>
+    </svg>
+    بیشتر
+  </div>
+</section>
+
+<section id="poetry">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">— آرشیو ادبی —</div>
+      <h2 class="section-title">شعر و دکلمه</h2>
+      <div class="divider"></div>
+      <p class="section-desc">گزیده‌ای از اشعار</p>
+    </div>
+
+    <div class="poems-grid">
+      <article class="poem-card reveal">
+        <h3 class="poem-title">هزار یاد فراموش</h3>
+        <div class="poem-text">
+          هزار یاد فراموش، آن زیستنی<br>
+          سلام سبز من از واژگان بی وطنی<br><br>
+          کفایت همه ی لحظه ها، غنیمت من<br>
+          حضور خلوت انسی خلوص انجمنی<br><br>
+          زلال زلف تو بر شانه ی سپیده دمت<br>
+          حریر اسود کشمیر و حله یمنی<br><br>
+          تبسمی طلبی تشنه ای تبی تابی<br>
+          هزار غمزه ی مخمور پشت پیرهنی<br><br>
+          انیس تا به پگاه شریک شام سیاه<br>
+          جهان و همهمه اش را شب شراب تنی<br><br>
+          سرور آخته سرمدم صنوبر من<br>
+          سرود سبز قبایان ساکن چمنی<br><br>
+          شکوه جاری دریا و آسمان و ابد<br>
+          تمام آیینه ای، جان من، تمام زنی<br><br>
+          به ژرفنای نگاهت شرار خواستن است<br>
+          به مردمان تو سوگند ترجمان منی
+        </div>
+      </article>
+
+      <article class="poem-card reveal">
+        <h3 class="poem-title">رویم به تو افتاد</h3>
+        <div class="poem-text">
+          رویم به تو افتاد که ای کاش به سنگی...<br>
+          ناگاه شدم آه شدم کاش درنگی...<br><br>
+          عمری سفرم از دل این خاک بر این تاک<br>
+          زهرم شد و آمیخت شرابی به شرنگی<br><br>
+          خندید و درخشید و به شب شعله درانداخت<br>
+          این شد که درآویخت پرندی به پرنگی<br><br>
+          مهتاب به مرداب درافتاد از آفاق<br>
+          تا مفت شود پنجه خور آز پلنگی<br><br>
+          ما لعبتکانیم و در این پرده ی تقدیر<br>
+          هر گونه که هستیم... چه نامی و چه ننگی<br><br>
+          آنک هله بخشیدمت ای دوست به دنیا<br>
+          بنگر که منم، دست فراخی دل تنگی<br><br>
+          آن سینه آیینه که روزی همه ام بود<br>
+          افتاد به دست تو که ای کاش به سنگی...
+        </div>
+      </article>
+
+      <article class="poem-card reveal">
+        <h3 class="poem-title">شبیه خواب بم</h3>
+        <div class="poem-text">
+          شبیه خواب بم تب دارد امید پریشانم<br>
+          فرو میریزد ای گل پیش چشمم طاق بستانم<br><br>
+          شبی می‌سوخت بر گلدسته ام تکبیر محزونی<br>
+          که چشمت لشکر چنگیز و من بهت خراسانم<br><br>
+          سر سرخ مرا دامان سبزت می دهد بر دار<br>
+          که من هم سرنوشت میر جنگل های گیلانم<br><br>
+          جهان حمام خون آلود کاشان است، باکی نیست!<br>
+          تو مست تخت طاووسی و من سوگ فراهانم<br><br>
+          تویی آیینه ی تیغ و ترنج و عشق و رسوایی<br>
+          منم پیراهن خونین یوسف آه کنعانم<br><br>
+          مرا کافی است از دنیا دوبیتی های لب هایت<br>
+          به خاک پیر اکباتان قسم اینقدر عریانم<br><br>
+          چه باک ای دوست من خاکم تو روزی باز خواهی کشت<br>
+          نمیرم آتشم عشقم غریوم آهم ایرانم
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="media" style="padding:0">
+  <div class="showreel">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">— روی صحنه —</div>
+        <h2 class="section-title">نمایه تصویری</h2>
+        <div class="divider"></div>
+        <p class="section-desc">شعرخوانی و اجراهای زنده</p>
+      </div>
+      <div class="video-wrapper reveal">
+        <iframe src="https://www.aparat.com/video/video/embed/videohash/frh463x/vt/frame" allowfullscreen allow="autoplay; encrypted-media"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="production">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">— کارنامه —</div>
+      <h2 class="section-title">پروژه‌های تهیه‌کنندگی</h2>
+      <div class="divider"></div>
+      <p class="section-desc">گزیده‌ای از آثار</p>
+    </div>
+    <div class="projects-grid">
+      <article class="project-card reveal">
+        <div class="project-thumb">
+          <img src="faraz.png" alt="مجموعه فراز">
+        </div>
+        <div class="project-body">
+          <span class="project-tag">مجموعه گفتگو محور</span>
+          <h3 class="project-title">فراز</h3>
+          <p class="project-desc">مجموعه‌ای گفتگو محور درباره‌ی کرونا و بحران‌های دینی آن؛ واکاوی تأثیر همه‌گیری بر مناسک، ایمان و زندگی معنوی جامعه.</p>
+          <div class="project-meta">
+            <span>🎙 گفتگو محور</span>
+            <span>📅 دوران کرونا</span>
+            <span>🕌 بحران‌های دینی</span>
+          </div>
+        </div>
+      </article>
+      <article class="project-card reveal">
+        <div class="project-thumb">
+          <img src="berangab.png" alt="مجموعه به رنگ آب">
+        </div>
+        <div class="project-body">
+          <span class="project-tag">مجموعه گفتگو محور</span>
+          <h3 class="project-title">به رنگ آب</h3>
+          <p class="project-desc">مجموعه‌ای گفتگو محور پیرامون شبهات دینی؛ بررسی پرسش‌ها و چالش‌های اعتقادی با رویکردی تحلیلی و پاسخ‌گو.</p>
+          <div class="project-meta">
+            <span>🎙 گفتگو محور</span>
+            <span>💧 به رنگ آب</span>
+            <span>📖 شبهات دینی</span>
+          </div>
+        </div>
+      </article>
+      <article class="project-card reveal">
+        <div class="project-thumb">
+          <img src="tarikhche.png" alt="مجموعه تاریخچه نفت">
+        </div>
+        <div class="project-body">
+          <span class="project-tag">مجموعه مستند</span>
+          <h3 class="project-title">تاریخچه نفت</h3>
+          <p class="project-desc">مجموعه‌ای درباره‌ی تاریخچه نفت و تأثیر تنگه هرمز در قدرت نرم ایران؛ بررسی ژئوپلیتیک انرژی و نقش ایران در معادلات جهانی.</p>
+          <div class="project-meta">
+            <span>🎬 مستند</span>
+            <span>⛽ تاریخچه نفت</span>
+            <span> قدرت نرم</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">— ارتباط —</div>
+      <h2 class="section-title">با من در تماس باشید</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <h3>پیشنهاد همکاری؟</h3>
+        <p>برای دعوت به اجرا، همکاری در پروژه‌های رسانه‌ای، یا هر گفت‌وگوی فرهنگی، خوشحال می‌شوم پیامتان را بخوانم.</p>
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+            </svg>
+          </div>
+          <div>
+            <strong>ایمیل</strong>
+            <span>Morteza7Jahani@Gmail.com</span>
+          </div>
+        </div>
+      </div>
+      <form class="contact-form reveal" onsubmit="handleSubmit(event)">
+        <div class="form-group"><label>نام و نام خانوادگی</label><input type="text" required placeholder="نام شما"></div>
+        <div class="form-group"><label>ایمیل</label><input type="email" required placeholder="email@example.com"></div>
+        <div class="form-group"><label>موضوع</label><input type="text" placeholder="دعوت به اجرا / همکاری / ..."></div>
+        <div class="form-group"><label>پیام</label><textarea required placeholder="پیام شما..."></textarea></div>
+        <button type="submit" class="btn" id="escapeBtn" style="width:100%;justify-content:center">ارسال پیام <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">مرتضی<span>·</span>جهانی مقدم</div>
+  <p style="color:rgba(244,237,224,.7);font-size:.95rem">شاعر · مجری · تهیه‌کننده</p>
+  <div class="social-links">
+    <a href="#" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+    <a href="#" aria-label="YouTube"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg></a>
+    <a href="#" aria-label="Telegram"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/></svg></a>
+  </div>
+  <div class="copyright">© ۱۰۵ — تمامی حقوق برای مرتضی جهانی مقدم محفوظ است. طراحی شده با ♥ برای کلمات و تصویرها.</div>
+</footer>
+
+<script>
+  document.querySelectorAll('.nav-links a').forEach(link=>{
+    link.addEventListener('click', ()=>{document.getElementById('navLinks').classList.remove('open');});
+  });
+
+  const observer = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');}});
+  }, {threshold:0.1});
+  document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+  const panorama = document.getElementById('panorama');
+  const panImage = document.getElementById('panImage');
+  const panHint = document.getElementById('panHint');
+
+  function updatePanorama(){
+    const rect = panorama.getBoundingClientRect();
+    const viewportH = window.innerHeight;
+    const scrollStart = rect.top + window.scrollY - viewportH;
+    const scrollEnd = rect.top + window.scrollY + rect.height;
+    const scrollRange = scrollEnd - scrollStart;
+    const progress = (window.scrollY - scrollStart) / scrollRange;
+    const clamped = Math.max(0, Math.min(1, progress));
+    const imageWidth = panImage.offsetWidth;
+    const containerWidth = panorama.offsetWidth;
+    const maxTranslate = imageWidth - containerWidth;
+    panImage.style.transform = `translate3d(${-clamped * maxTranslate}px, 0, 0)`;
+    if(panHint){
+      panHint.style.opacity = clamped > 0.05 ? '0' : '1';
+      panHint.style.transition = 'opacity .5s';
+    }
+  }
+
+  window.addEventListener('scroll', updatePanorama, {passive: true});
+  window.addEventListener('resize', updatePanorama);
+  window.addEventListener('load', ()=>setTimeout(updatePanorama,100));
+
+  function handleSubmit(e){
+    e.preventDefault();
+    alert('پیام شما با موفقیت ارسال شد. به‌زودی با شما تماس می‌گیرم. 🌹');
+    e.target.reset();
+  }
+
+  window.addEventListener('scroll', ()=>{
+    document.querySelector('nav').style.boxShadow = window.scrollY > 50 ? '0 2px 20px rgba(0,0,0,.05)' : 'none';
+  });
+
+  // دکمه فراری 😄
+  const escapeBtn = document.getElementById('escapeBtn');
+  const contactForm = document.querySelector('.contact-form');
+  let escapeCount = 0;
+  
+  escapeBtn.addEventListener('mouseover', function(e) {
+    escapeCount++;
+    
+    // بعد از 5 بار فرار، دکمه تسلیم می‌شود!
+    if(escapeCount > 5) {
+      this.style.position = 'static';
+      this.style.transform = 'none';
+      return;
+    }
+    
+    const formRect = contactForm.getBoundingClientRect();
+    const btnRect = this.getBoundingClientRect();
+    
+    // محاسبه محدوده مجاز برای حرکت
+    const maxX = formRect.width - btnRect.width - 20;
+    const maxY = formRect.height - btnRect.height - 20;
+    
+    // موقعیت تصادفی
+    const randomX = Math.random() * maxX;
+    const randomY = Math.random() * maxY;
+    
+    // اعمال موقعیت جدید
+    this.style.position = 'absolute';
+    this.style.left = randomX + 'px';
+    this.style.top = randomY + 'px';
+    this.style.transition = 'all 0.4s cubic-bezier(.2,.8,.2,1)';
+    this.style.zIndex = '10';
+  });
+
+  // در موبایل، با touch هم کار کند
+  escapeBtn.addEventListener('touchstart', function(e) {
+    e.preventDefault();
+    this.dispatchEvent(new MouseEvent('mouseover'));
+  });
+</script>
+</body>
+</html>
