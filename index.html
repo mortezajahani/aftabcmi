@@ -3,575 +3,760 @@
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#f4ead8">
-<meta name="description" content="مؤسسه فرهنگی رسانه‌ای آفتاب؛ بستری برای اندیشه، فرهنگ، هنر و روایت.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#071c3b">
+<meta name="description" content="مؤسسه فرهنگی رسانه‌ای آفتاب؛ اندیشه، فرهنگ، هنر و رسانه">
 <title>مؤسسه فرهنگی رسانه‌ای آفتاب</title>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  --paper:#f4ead8;
-  --ink:#211e1b;
-  --muted:#74695e;
-  --red:#df211b;
-  --line:rgba(33,30,27,.16);
-  --white:#fffaf1;
+  --navy: #071c3b;
+  --blue: #103d70;
+  --teal: #087e82;
+  --green: #08765b;
+  --gold: #e9a51a;
+  --gold-light: #ffd36b;
+  --cream: #f8f5eb;
+  --white: #ffffff;
+  --text: #192b40;
+  --muted: #68788a;
+  --border: rgba(7,28,59,.12);
 }
 
-* {box-sizing:border-box}
-html {scroll-behavior:smooth}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
-  margin:0;
-  background:var(--paper);
-  color:var(--ink);
-  font-family:Vazirmatn,Tahoma,sans-serif;
-  line-height:1.9;
+  font-family: 'Vazirmatn', Tahoma, sans-serif;
+  background: var(--cream);
+  color: var(--text);
+  line-height: 2;
 }
 
-a {color:inherit;text-decoration:none}
-.wrap {width:min(1160px,calc(100% - 42px));margin:auto}
-.topline {height:5px;background:var(--red)}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  width: min(1160px, 90%);
+  margin: auto;
+}
+
+/* Decorative patterns */
+
+.pattern {
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(233,165,26,.17) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+.gold-line {
+  width: 55px;
+  height: 3px;
+  background: var(--gold);
+  margin-bottom: 17px;
+}
+
+/* Header */
 
 header {
-  position:sticky;
-  top:0;
-  z-index:9;
-  background:rgba(244,234,216,.92);
-  backdrop-filter:blur(12px);
-  border-bottom:1px solid var(--line);
+  background: rgba(7,28,59,.97);
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 3px solid var(--gold);
+  box-shadow: 0 5px 25px rgba(0,0,0,.12);
 }
 
 .nav {
-  height:78px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:20px;
+  height: 85px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
 }
 
 .brand {
-  display:flex;
-  align-items:center;
-  gap:11px;
-  font-weight:900;
-  font-size:1.05rem;
+  display: flex;
+  align-items: center;
+  gap: 13px;
 }
 
-.mark {
-  width:42px;
-  height:42px;
-  background:var(--red);
-  color:white;
-  display:grid;
-  place-items:center;
-  font-size:1.5rem;
-  transform:rotate(-7deg);
+.brand-symbol {
+  width: 49px;
+  height: 49px;
+  border: 2px solid var(--gold);
+  transform: rotate(45deg);
+  display: grid;
+  place-items: center;
+  position: relative;
 }
 
-.brand small {
-  display:block;
-  font-size:.65rem;
-  color:var(--muted);
-  font-weight:500;
+.brand-symbol span {
+  transform: rotate(-45deg);
+  color: var(--gold-light);
+  font-size: 29px;
+  font-weight: 900;
 }
 
-.links {
-  display:flex;
-  gap:25px;
-  font-size:.86rem;
-  color:#51483f;
+.brand-name {
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1.7;
 }
 
-.links a:hover {color:var(--red)}
-
-.navbtn,.btn {
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  padding:9px 17px;
-  border:1px solid var(--ink);
-  font-size:.85rem;
-  font-weight:700;
-  transition:.2s;
+.brand-name small {
+  display: block;
+  font-size: 10px;
+  color: var(--gold-light);
+  font-weight: 400;
+  letter-spacing: 1px;
 }
 
-.navbtn:hover,.btn:hover {
-  background:var(--ink);
-  color:var(--paper);
+.nav-links {
+  display: flex;
+  gap: 26px;
+  font-size: 13px;
+  color: #e4eaf2;
+}
+
+.nav-links a {
+  transition: .2s;
+}
+
+.nav-links a:hover {
+  color: var(--gold-light);
+}
+
+.nav-button {
+  border: 1px solid var(--gold);
+  padding: 7px 17px;
+  color: var(--gold-light);
+  font-size: 12px;
+  transition: .25s;
+}
+
+.nav-button:hover {
+  background: var(--gold);
+  color: var(--navy);
 }
 
 /* Hero */
 
 .hero {
-  padding:62px 0 72px;
-  position:relative;
-  overflow:hidden;
+  background:
+    radial-gradient(ellipse at 50% 100%, rgba(8,126,130,.28), transparent 55%),
+    linear-gradient(135deg, #07162f, #103d70 65%, #087e82);
+  color: white;
+  padding: 105px 0 95px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
 }
 
-.eyebrow {
-  display:flex;
-  align-items:center;
-  gap:10px;
-  color:var(--red);
-  font-size:.78rem;
-  font-weight:800;
+.hero::before,
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 430px;
+  height: 430px;
+  border: 1px solid rgba(233,165,26,.2);
+  transform: rotate(45deg);
+  pointer-events: none;
 }
 
-.eyebrow:before {
-  content:"";
-  width:30px;
-  height:2px;
-  background:var(--red);
+.hero::before {
+  top: -280px;
+  right: -160px;
 }
 
-h1 {
-  font-size:clamp(2.25rem,5.5vw,5rem);
-  line-height:1.28;
-  margin:16px 0;
-  font-weight:900;
-  letter-spacing:-.04em;
-  max-width:850px;
+.hero::after {
+  bottom: -320px;
+  left: -160px;
 }
 
-h1 em {
-  font-style:normal;
-  color:var(--red);
+.hero-content {
+  position: relative;
+  z-index: 2;
 }
+
+.hero-symbol {
+  width: 115px;
+  height: 115px;
+  margin: 0 auto 35px;
+  border: 2px solid var(--gold);
+  transform: rotate(45deg);
+  position: relative;
+  display: grid;
+  place-items: center;
+  background: rgba(7,28,59,.2);
+  box-shadow: 0 0 35px rgba(233,165,26,.12);
+}
+
+.hero-symbol::before {
+  content: "";
+  position: absolute;
+  inset: 9px;
+  border: 1px solid rgba(255,211,107,.65);
+}
+
+.hero-symbol span {
+  transform: rotate(-45deg);
+  font-size: 76px;
+  line-height: 1;
+  color: var(--gold);
+}
+
+.hero-label {
+  color: var(--gold-light);
+  font-size: 13px;
+  letter-spacing: 2px;
+  font-weight: 500;
+}
+
+.hero h1 {
+  font-size: clamp(32px,5vw,62px);
+  line-height: 1.7;
+  font-weight: 900;
+  margin: 15px 0;
+}
+
+.hero h1 span {
+  color: var(--gold-light);
+}
+
+.hero-description {
+  max-width: 650px;
+  margin: 0 auto;
+  color: #d5e1ee;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 34px;
+  flex-wrap: wrap;
+}
+
+.button {
+  padding: 11px 25px;
+  font-size: 13px;
+  font-weight: 700;
+  transition: .25s;
+  display: inline-block;
+}
+
+.button-gold {
+  background: var(--gold);
+  color: var(--navy);
+}
+
+.button-gold:hover {
+  background: var(--gold-light);
+  transform: translateY(-3px);
+}
+
+.button-outline {
+  border: 1px solid rgba(255,255,255,.5);
+  color: white;
+}
+
+.button-outline:hover {
+  border-color: var(--gold);
+  color: var(--gold-light);
+}
+
+/* Introduction */
 
 .intro {
-  max-width:620px;
-  color:var(--muted);
-  font-size:1.03rem;
-  margin:0 0 24px;
+  padding: 100px 0;
 }
 
-.actions {
-  display:flex;
-  gap:11px;
-  flex-wrap:wrap;
+.section-title {
+  margin-bottom: 35px;
 }
 
-.btn.primary {
-  background:var(--red);
-  border-color:var(--red);
-  color:white;
+.section-title small {
+  color: var(--teal);
+  font-size: 12px;
+  font-weight: 800;
 }
 
-.btn.primary:hover {background:#b91814}
-
-.heroart {
-  margin-top:42px;
-  position:relative;
+.section-title h2 {
+  color: var(--navy);
+  font-size: clamp(25px,3.5vw,38px);
+  font-weight: 900;
+  line-height: 1.6;
+  margin-top: 5px;
 }
 
-.heroart:before {
-  content:"";
-  position:absolute;
-  inset:18px -14px -14px 14px;
-  border:1px solid var(--red);
+.intro-grid {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 65px;
+  align-items: center;
 }
 
-.heroart img {
-  width:100%;
-  height:auto;
-  display:block;
-  position:relative;
-  box-shadow:0 18px 50px #2b1e201c;
+.intro-text p {
+  color: var(--muted);
+  font-size: 15px;
+  margin-bottom: 17px;
 }
 
-.imagetag {
-  position:absolute;
-  bottom:16px;
-  right:16px;
-  background:var(--paper);
-  padding:7px 13px;
-  font-size:.75rem;
-  font-weight:700;
+.intro-quote {
+  background: var(--navy);
+  color: white;
+  padding: 38px;
+  position: relative;
+  overflow: hidden;
 }
 
-/* Ticker */
-
-.ticker {
-  background:var(--red);
-  color:white;
-  padding:11px 0;
-  white-space:nowrap;
-  overflow:hidden;
-  font-size:.83rem;
-  font-weight:700;
+.intro-quote::before {
+  content: "«";
+  position: absolute;
+  left: 15px;
+  top: -35px;
+  font-size: 120px;
+  color: rgba(233,165,26,.2);
 }
 
-.ticker span {margin-left:45px}
-.ticker b {margin:0 9px}
-
-/* Sections */
-
-section {padding:78px 0}
-
-.head {
-  display:flex;
-  justify-content:space-between;
-  align-items:end;
-  gap:25px;
-  margin-bottom:32px;
+.intro-quote h3 {
+  color: var(--gold-light);
+  font-size: 20px;
+  margin-bottom: 15px;
 }
 
-.kicker {
-  color:var(--red);
-  font-size:.78rem;
-  font-weight:800;
+.intro-quote p {
+  font-size: 14px;
+  color: #d6e1ec;
 }
 
-.head h2 {
-  font-size:clamp(1.8rem,3.4vw,2.8rem);
-  line-height:1.4;
-  margin:7px 0 0;
-  font-weight:900;
+/* Values */
+
+.values {
+  background: var(--navy);
+  color: white;
+  padding: 85px 0;
 }
 
-.head p {
-  max-width:420px;
-  color:var(--muted);
-  margin:0;
-  font-size:.9rem;
+.values .section-title h2 {
+  color: white;
 }
 
-/* About */
-
-.about {
-  display:grid;
-  grid-template-columns:1.05fr .95fr;
-  gap:48px;
-  align-items:start;
+.values .section-title small {
+  color: var(--gold);
 }
 
-.aboutcopy {
-  font-size:1.05rem;
-  line-height:2.2;
+.value-grid {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 18px;
 }
 
-.quote {
-  border-right:4px solid var(--red);
-  padding:6px 18px;
-  margin-top:24px;
-  font-size:1.2rem;
-  font-weight:800;
+.value-card {
+  border: 1px solid rgba(255,255,255,.14);
+  padding: 28px 20px;
+  text-align: center;
+  transition: .3s;
 }
 
-.manifesto {
-  background:var(--ink);
-  color:var(--paper);
-  padding:34px;
-  position:relative;
-  overflow:hidden;
+.value-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-6px);
+  background: rgba(255,255,255,.04);
 }
 
-.manifesto:after {
-  content:"آفتاب";
-  position:absolute;
-  left:-12px;
-  bottom:-55px;
-  font-size:7rem;
-  font-weight:900;
-  color:#ffffff0b;
+.value-icon {
+  font-size: 32px;
+  color: var(--gold);
+  margin-bottom: 13px;
 }
 
-.manifesto h3 {
-  font-size:1.35rem;
-  margin:0 0 12px;
+.value-card h3 {
+  font-size: 16px;
+  margin-bottom: 9px;
 }
 
-.manifesto p {
-  color:#d8cbbb;
-  font-size:.9rem;
-  margin:0;
+.value-card p {
+  font-size: 12px;
+  color: #b9c9d8;
 }
 
-/* Services */
+/* Activities */
 
-.services {background:#eee1cc}
-
-.cards {
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:15px;
+.activities {
+  padding: 100px 0;
 }
 
-.card {
-  padding:25px;
-  border:1px solid var(--line);
-  min-height:205px;
-  background:#f8efdf;
-  transition:.2s;
+.activity-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 18px;
 }
 
-.card:hover {
-  transform:translateY(-5px);
-  border-color:var(--red);
+.activity-card {
+  background: white;
+  padding: 29px;
+  border-bottom: 3px solid var(--teal);
+  box-shadow: 0 7px 25px rgba(7,28,59,.04);
+  transition: .3s;
 }
 
-.num {
-  color:var(--red);
-  font-weight:900;
-  font-size:.8rem;
+.activity-card:hover {
+  transform: translateY(-6px);
+  border-bottom-color: var(--gold);
+  box-shadow: 0 15px 35px rgba(7,28,59,.09);
 }
 
-.card h3 {
-  font-size:1.15rem;
-  margin:15px 0 8px;
+.activity-number {
+  color: var(--gold);
+  font-size: 26px;
+  font-weight: 900;
 }
 
-.card p {
-  color:var(--muted);
-  font-size:.87rem;
-  margin:0;
+.activity-card h3 {
+  color: var(--navy);
+  font-size: 17px;
+  margin: 10px 0;
 }
 
-/* Projects */
-
-.projects {
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:16px;
+.activity-card p {
+  color: var(--muted);
+  font-size: 13px;
 }
 
-.project {
-  padding:27px;
-  background:var(--white);
-  border-top:3px solid var(--red);
+/* Programs */
+
+.programs {
+  background: #eaece5;
+  padding: 90px 0;
 }
 
-.project small {
-  color:var(--red);
-  font-weight:800;
+.program-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
 }
 
-.project h3 {
-  margin:9px 0;
-  font-size:1.25rem;
+.program-card {
+  background: white;
+  padding: 30px;
+  border-right: 4px solid var(--gold);
 }
 
-.project p {
-  color:var(--muted);
-  font-size:.9rem;
-  margin:0;
+.program-card small {
+  color: var(--green);
+  font-weight: 800;
+  font-size: 12px;
 }
 
-/* Statement */
-
-.statement {
-  background:var(--red);
-  color:white;
-  padding:58px 0;
+.program-card h3 {
+  color: var(--navy);
+  font-size: 19px;
+  margin: 10px 0;
 }
 
-.statement .wrap {
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:30px;
+.program-card p {
+  color: var(--muted);
+  font-size: 13px;
 }
 
-.statement h2 {
-  font-size:clamp(1.6rem,3.5vw,2.8rem);
-  line-height:1.5;
-  margin:0;
-  max-width:720px;
+/* Call to action */
+
+.cta {
+  padding: 75px 0;
+  background: linear-gradient(110deg,var(--green),var(--teal));
+  color: white;
+  text-align: center;
 }
 
-.statement p {
-  margin:8px 0 0;
-  color:#ffe1dc;
+.cta h2 {
+  font-size: clamp(23px,3vw,34px);
+  margin-bottom: 12px;
 }
 
-.statement .btn {
-  border-color:white;
-  white-space:nowrap;
-}
-
-.statement .btn:hover {
-  background:white;
-  color:var(--red);
+.cta p {
+  color: #d8eeee;
+  font-size: 14px;
+  margin-bottom: 24px;
 }
 
 /* Contact */
 
 .contact {
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:40px;
+  padding: 95px 0;
 }
 
-.contact p {color:var(--muted)}
-
-.contactbox {
-  border:1px solid var(--line);
-  padding:25px;
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 35px;
 }
 
-.contactbox strong {
-  display:block;
-  margin-bottom:7px;
+.contact-info p {
+  color: var(--muted);
+  font-size: 14px;
+  margin-bottom: 20px;
 }
 
-.contactbox a {color:var(--red)}
+.contact-panel {
+  padding: 30px;
+  background: white;
+  border: 1px solid var(--border);
+}
+
+.contact-panel h3 {
+  color: var(--navy);
+  margin-bottom: 15px;
+}
+
+.contact-panel p {
+  font-size: 14px;
+  margin-bottom: 9px;
+  color: var(--muted);
+}
+
+.contact-panel a {
+  color: var(--teal);
+}
 
 /* Footer */
 
 footer {
-  background:var(--ink);
-  color:var(--paper);
-  padding:25px 0;
-  font-size:.8rem;
+  background: #041329;
+  color: white;
+  padding: 35px 0;
+  border-top: 3px solid var(--gold);
 }
 
-.foot {
-  display:flex;
-  justify-content:space-between;
-  gap:20px;
-  align-items:center;
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
 }
 
-.foot span {color:#c8bbaa}
+.footer-brand {
+  font-weight: 800;
+}
+
+.footer-brand small {
+  display: block;
+  color: var(--gold);
+  font-size: 11px;
+  font-weight: 400;
+}
+
+.footer-copy {
+  color: #a9b8c9;
+  font-size: 11px;
+}
 
 /* Responsive */
 
-@media(max-width:760px) {
-  .links {display:none}
-  .nav {height:68px}
-  .hero {padding-top:42px}
-  .about,.contact {
-    grid-template-columns:1fr;
-    gap:25px;
+@media(max-width:850px) {
+  .nav-links {
+    gap: 12px;
+    font-size: 11px;
   }
-  .cards {grid-template-columns:1fr 1fr}
-  .head {display:block}
-  .head p {margin-top:12px}
-  .statement .wrap {display:block}
-  .statement .btn {margin-top:20px}
-  .foot {display:block}
-  .foot span {
-    display:block;
-    margin-top:8px;
+
+  .nav-button {
+    display: none;
+  }
+
+  .value-grid {
+    grid-template-columns: repeat(2,1fr);
+  }
+
+  .intro-grid {
+    gap: 30px;
   }
 }
 
-@media(max-width:480px) {
-  .wrap {width:min(100% - 30px,1160px)}
-  .cards,.projects {grid-template-columns:1fr}
-  .card {min-height:0}
-  .heroart:before {inset:10px -7px -7px 7px}
-  .imagetag {font-size:.65rem}
+@media(max-width:650px) {
+  .container {
+    width: 91%;
+  }
+
+  .nav {
+    height: 72px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .brand-name {
+    font-size: 12px;
+  }
+
+  .hero {
+    padding: 80px 0;
+  }
+
+  .hero h1 {
+    font-size: 34px;
+  }
+
+  .intro,
+  .activities,
+  .contact {
+    padding: 70px 0;
+  }
+
+  .intro-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .activity-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .program-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media(max-width:430px) {
+  .activity-grid,
+  .value-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-symbol {
+    width: 90px;
+    height: 90px;
+  }
+
+  .hero-symbol span {
+    font-size: 60px;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<div class="topline"></div>
-
 <header>
-<div class="wrap nav">
+<div class="container nav">
 
-<a class="brand" href="#home">
-<span class="mark">آ</span>
-<span>
-مؤسسه فرهنگی رسانه‌ای آفتاب
-<small>اندیشه • فرهنگ • رسانه</small>
-</span>
+<a href="#home" class="brand">
+  <div class="brand-symbol"><span>آ</span></div>
+  <div class="brand-name">
+    مؤسسه فرهنگی رسانه‌ای آفتاب
+    <small>AFTAB CULTURAL MEDIA INSTITUTE</small>
+  </div>
 </a>
 
-<nav class="links">
-<a href="#about">درباره ما</a>
-<a href="#fields">حوزه‌های فعالیت</a>
-<a href="#projects">رویدادها و برنامه‌ها</a>
-<a href="#contact">ارتباط با ما</a>
+<nav class="nav-links">
+  <a href="#home">صفحه اصلی</a>
+  <a href="#about">درباره ما</a>
+  <a href="#values">ارزش‌ها</a>
+  <a href="#activities">فعالیت‌ها</a>
+  <a href="#programs">رویدادها</a>
+  <a href="#contact">ارتباط با ما</a>
 </nav>
 
-<a class="navbtn" href="#contact">همراه آفتاب شوید</a>
+<a href="#contact" class="nav-button">همکاری با آفتاب</a>
 
 </div>
 </header>
 
-<main id="home">
+<main>
 
-<section class="hero">
-<div class="wrap">
+<!-- HERO -->
 
-<div class="eyebrow">روایت ما، از همین‌جا آغاز می‌شود</div>
+<section class="hero pattern" id="home">
+<div class="container hero-content">
+
+<div class="hero-symbol">
+  <span>☀</span>
+</div>
+
+<div class="hero-label">AFTAB CULTURAL MEDIA INSTITUTE</div>
 
 <h1>
-برای روشن‌تر دیدن،<br>
-<em>برای بهتر روایت کردن.</em>
+اندیشه‌ای برای فردا،<br>
+<span>روایتی برای امروز</span>
 </h1>
 
-<p class="intro">
-آفتاب، خانه‌ای برای گفت‌وگو، آفرینش و کنش فرهنگی است؛
-جایی برای پیوند اندیشه و هنر با رسانه و جامعه.
+<p class="hero-description">
+مؤسسه فرهنگی رسانه‌ای آفتاب؛
+بستری برای شکوفایی اندیشه، گسترش فرهنگ،
+آفرینش هنری و روایت رسانه‌ای جامعه.
 </p>
 
-<div class="actions">
-<a class="btn primary" href="#about">آشنایی با آفتاب</a>
-<a class="btn" href="#projects">فعالیت‌های ما</a>
-</div>
-
-<div class="heroart">
-<img src="aftab-team.jpg" alt="اعضا و همراهان مؤسسه فرهنگی رسانه‌ای آفتاب">
-<div class="imagetag">مؤسسه فرهنگی رسانه‌ای آفتاب</div>
+<div class="hero-buttons">
+  <a href="#about" class="button button-gold">با آفتاب آشنا شوید</a>
+  <a href="#activities" class="button button-outline">حوزه‌های فعالیت</a>
 </div>
 
 </div>
 </section>
 
-<div class="ticker">
-<div class="wrap">
-<span>اندیشه <b>✳</b> فرهنگ <b>✳</b> هنر <b>✳</b> رسانه <b>✳</b> گفت‌وگو <b>✳</b> آفرینش</span>
-<span>اندیشه <b>✳</b> فرهنگ <b>✳</b> هنر <b>✳</b> رسانه</span>
-</div>
-</div>
+<!-- ABOUT -->
 
-<section id="about">
-<div class="wrap">
+<section class="intro" id="about">
+<div class="container">
 
-<div class="head">
-<div>
-<div class="kicker">01 / درباره ما</div>
-<h2>آفتاب؛ فرصتی برای<br>باهم ساختن</h2>
-</div>
-<p>ما به نیروی فرهنگ برای ساختن جامعه‌ای آگاه‌تر، خلاق‌تر و گفت‌وگومحور باور داریم.</p>
+<div class="intro-grid">
+
+<div class="intro-text">
+<div class="section-title">
+  <div class="gold-line"></div>
+  <small>ABOUT US / درباره مؤسسه</small>
+  <h2>آفتاب؛ تلاقی فرهنگ،<br>اندیشه و رسانه</h2>
 </div>
 
-<div class="about">
-
-<div class="aboutcopy">
 <p>
-مؤسسه فرهنگی رسانه‌ای آفتاب بستری مستقل برای فعالیت‌های فرهنگی،
-هنری و رسانه‌ای است. ما تلاش می‌کنیم ایده‌ها را به تجربه‌های جمعی
-تبدیل کنیم و میان نسل‌ها، نگاه‌ها و روایت‌های گوناگون پل بزنیم.
+مؤسسه فرهنگی رسانه‌ای آفتاب با رویکردی فرهنگی،
+اجتماعی و رسانه‌ای، در مسیر ایجاد فرصت‌هایی
+برای رشد اندیشه، توسعه فعالیت‌های هنری و
+تقویت جریان‌های فرهنگی گام برمی‌دارد.
 </p>
 
 <p>
-از نشست و رویداد فرهنگی تا تولید محتوای رسانه‌ای،
-از ادبیات و هنر تا آموزش و مشارکت اجتماعی؛
-آفتاب جایی برای آغاز کردن و ادامه دادن است.
+ما باور داریم فرهنگ، زمینه‌ساز تحول اجتماعی است
+و رسانه می‌تواند صدای اندیشه‌ها، تجربه‌ها
+و ظرفیت‌های انسانی باشد.
 </p>
 
-<div class="quote">
-«فرهنگ، نوری است که با تقسیم شدن، بیشتر می‌شود.»
-</div>
+<p>
+آفتاب تلاش می‌کند با گردهم آوردن صاحبان ایده،
+هنرمندان، نویسندگان، پژوهشگران و علاقه‌مندان
+به فرهنگ، فضایی برای همکاری و آفرینش فراهم کند.
+</p>
 </div>
 
-<div class="manifesto">
-<h3>نگاه ما</h3>
+<div class="intro-quote pattern">
+<h3>چشم‌انداز ما</h3>
 <p>
-به گفت‌وگو به‌جای سکوت، به خلاقیت به‌جای تکرار
-و به مشارکت به‌جای تماشا باور داریم.
-آفتاب با همراهی آدم‌هایی شکل می‌گیرد که
-برای بهتر شدن جهان پیرامونشان ایده‌ای در سر دارند.
+ساختن بستری پویا برای گفت‌وگو، خلاقیت و مشارکت؛
+جایی که اندیشه‌ها مجال ظهور پیدا کنند،
+استعدادها شکوفا شوند و روایت‌های تازه‌ای
+از فرهنگ و جامعه شکل بگیرند.
 </p>
 </div>
 
@@ -579,125 +764,175 @@ footer {
 </div>
 </section>
 
-<section class="services" id="fields">
-<div class="wrap">
+<!-- VALUES -->
 
-<div class="head">
-<div>
-<div class="kicker">02 / چه می‌کنیم؟</div>
-<h2>میدان‌های فعالیت</h2>
+<section class="values pattern" id="values">
+<div class="container">
+
+<div class="section-title">
+<div class="gold-line"></div>
+<small>OUR VALUES / ارزش‌های ما</small>
+<h2>آنچه به آن باور داریم</h2>
 </div>
-<p>از ایده تا اجرا؛ در مسیرهایی که فرهنگ، هنر و رسانه به هم می‌رسند.</p>
+
+<div class="value-grid">
+
+<div class="value-card">
+<div class="value-icon">✦</div>
+<h3>اندیشه و آگاهی</h3>
+<p>ترویج تفکر نقادانه، آگاهی عمومی و گفت‌وگوی سازنده.</p>
 </div>
 
-<div class="cards">
+<div class="value-card">
+<div class="value-icon">✺</div>
+<h3>هویت و اصالت</h3>
+<p>پاسداشت فرهنگ، هویت ایرانی و میراث ارزشمند فرهنگی.</p>
+</div>
 
-<article class="card">
-<div class="num">01 — رسانه</div>
-<h3>تولید و روایت رسانه‌ای</h3>
-<p>تولید محتوای تصویری، نوشتاری و چندرسانه‌ای برای بازتاب مسائل و روایت تجربه‌های انسانی.</p>
+<div class="value-card">
+<div class="value-icon">❖</div>
+<h3>خلاقیت و نوآوری</h3>
+<p>حمایت از ایده‌های نو و تجربه‌های خلاقانه فرهنگی.</p>
+</div>
+
+<div class="value-card">
+<div class="value-icon">☼</div>
+<h3>مشارکت و همدلی</h3>
+<p>ایجاد فرصت برای همکاری و حضور مؤثر اجتماعی.</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- ACTIVITIES -->
+
+<section class="activities" id="activities">
+<div class="container">
+
+<div class="section-title">
+<div class="gold-line"></div>
+<small>OUR FIELDS / حوزه‌های فعالیت</small>
+<h2>در چه زمینه‌هایی فعالیت می‌کنیم؟</h2>
+</div>
+
+<div class="activity-grid">
+
+<article class="activity-card">
+<div class="activity-number">۰۱</div>
+<h3>فعالیت‌های فرهنگی</h3>
+<p>برگزاری نشست‌ها، همایش‌ها، محافل فرهنگی و برنامه‌های ترویجی.</p>
 </article>
 
-<article class="card">
-<div class="num">02 — ادبیات</div>
-<h3>ادبیات و محافل فرهنگی</h3>
-<p>برگزاری نشست‌ها، حلقه‌های ادبی، شعرخوانی و برنامه‌هایی برای گسترش گفت‌وگوی فرهنگی.</p>
+<article class="activity-card">
+<div class="activity-number">۰۲</div>
+<h3>فعالیت‌های رسانه‌ای</h3>
+<p>تولید محتوای تصویری، نوشتاری و چندرسانه‌ای و روایت رویدادها.</p>
 </article>
 
-<article class="card">
-<div class="num">03 — رویداد</div>
-<h3>طراحی و اجرای رویداد</h3>
-<p>برنامه‌ریزی و اجرای گردهمایی‌ها، نشست‌های تخصصی، جشنواره‌ها و رویدادهای عمومی.</p>
+<article class="activity-card">
+<div class="activity-number">۰۳</div>
+<h3>ادبیات و هنر</h3>
+<p>حمایت از جریان‌های ادبی، شعر، داستان، هنرهای تجسمی و خلاقیت.</p>
 </article>
 
-<article class="card">
-<div class="num">04 — آموزش</div>
-<h3>آموزش و توانمندسازی</h3>
-<p>فراهم کردن فرصت یادگیری، تجربه عملی و رشد مهارت‌های فرهنگی و رسانه‌ای.</p>
+<article class="activity-card">
+<div class="activity-number">۰۴</div>
+<h3>آموزش و پژوهش</h3>
+<p>برگزاری کارگاه‌ها، دوره‌های آموزشی و فعالیت‌های پژوهشی.</p>
 </article>
 
-<article class="card">
-<div class="num">05 — هنر</div>
-<h3>هنر و خلاقیت</h3>
-<p>حمایت از ایده‌های خلاق و همکاری میان هنرمندان، نویسندگان و فعالان فرهنگی.</p>
+<article class="activity-card">
+<div class="activity-number">۰۵</div>
+<h3>رویداد و جشنواره</h3>
+<p>طراحی، برنامه‌ریزی و اجرای رویدادهای فرهنگی و اجتماعی.</p>
 </article>
 
-<article class="card">
-<div class="num">06 — اجتماع</div>
-<h3>مشارکت اجتماعی</h3>
-<p>ایجاد زمینه همکاری شهروندان و گروه‌های مردمی برای ساختن تجربه‌های جمعی مؤثر.</p>
+<article class="activity-card">
+<div class="activity-number">۰۶</div>
+<h3>مسئولیت اجتماعی</h3>
+<p>تقویت مشارکت اجتماعی و ایجاد ارتباط میان گروه‌های فرهنگی.</p>
 </article>
 
 </div>
 </div>
 </section>
 
-<section id="projects">
-<div class="wrap">
+<!-- PROGRAMS -->
 
-<div class="head">
-<div>
-<div class="kicker">03 / در جریان</div>
-<h2>رویدادها و برنامه‌ها</h2>
+<section class="programs" id="programs">
+<div class="container">
+
+<div class="section-title">
+<div class="gold-line"></div>
+<small>EVENTS & PROGRAMS / برنامه‌ها</small>
+<h2>رویدادها و جریان‌های فرهنگی</h2>
 </div>
-<p>آفتاب در هر برنامه، فرصتی برای دیدار، یادگیری و ساختن یک تجربه مشترک فراهم می‌کند.</p>
-</div>
 
-<div class="projects">
+<div class="program-grid">
 
-<article class="project">
+<article class="program-card">
 <small>حلقه ادبی</small>
-<h3>پنجگاه؛ قرار شعر و گفت‌وگو</h3>
-<p>نشستی برای شنیدن شعر، کشف صداهای تازه و شکل دادن به گفت‌وگویی زنده پیرامون ادبیات.</p>
+<h3>پنجگاه؛ محفل شعر و ادبیات</h3>
+<p>
+پنجگاه فرصتی برای گردهمایی شاعران،
+نویسندگان و علاقه‌مندان ادبیات است؛
+محفلی برای شنیدن، خواندن و گفت‌وگو
+درباره شعر و جهان ادبیات.
+</p>
 </article>
 
-<article class="project">
+<article class="program-card">
 <small>برنامه‌های فرهنگی</small>
-<h3>نشست‌ها و دورهمی‌های آفتاب</h3>
-<p>گردهمایی‌هایی با حضور علاقه‌مندان، صاحب‌نظران و کنشگران حوزه فرهنگ، هنر و رسانه.</p>
+<h3>نشست‌ها و گفت‌وگوهای آفتاب</h3>
+<p>
+برگزاری نشست‌های فرهنگی، اجتماعی و تخصصی
+با حضور صاحب‌نظران، هنرمندان و فعالان
+حوزه‌های مختلف.
+</p>
 </article>
 
 </div>
 </div>
 </section>
 
-<div class="statement">
-<div class="wrap">
-<div>
-<h2>هر ایده‌ای می‌تواند نقطه شروع یک اتفاق روشن باشد.</h2>
-<p>اگر دغدغه‌ای فرهنگی داری، آفتاب جای گفت‌وگوی ماست.</p>
+<!-- CTA -->
+
+<section class="cta pattern">
+<div class="container">
+<h2>فرهنگ با مشارکت ما روشن‌تر می‌شود.</h2>
+<p>برای ساختن تجربه‌های فرهنگی تازه، به جمع همراهان آفتاب بپیوندید.</p>
+<a href="#contact" class="button button-gold">ارتباط با مؤسسه</a>
 </div>
-<a class="btn" href="#contact">با ما در ارتباط باش</a>
-</div>
+</section>
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+<div class="container">
+
+<div class="section-title">
+<div class="gold-line"></div>
+<small>CONTACT US / ارتباط با ما</small>
+<h2>در ارتباط باشیم</h2>
 </div>
 
-<section id="contact">
-<div class="wrap">
+<div class="contact-grid">
 
-<div class="head">
-<div>
-<div class="kicker">04 / ارتباط</div>
-<h2>به آفتاب نزدیک‌تر شو</h2>
-</div>
-<p>برای همکاری، پیشنهاد برنامه، مشارکت در رویدادها یا گفت‌وگو درباره ایده‌هایتان با ما در ارتباط باشید.</p>
-</div>
-
-<div class="contact">
-
-<div>
-<h3>با هم، روایت‌های تازه می‌سازیم.</h3>
+<div class="contact-info">
 <p>
-این وب‌سایت نقطه شروع ارتباط ماست.
-اطلاعات تماس و نشانی شبکه‌های اجتماعی مؤسسه
-را می‌توانید در این بخش اضافه کنید.
+آفتاب از همراهی و همکاری افراد،
+گروه‌ها و مجموعه‌های فرهنگی استقبال می‌کند.
+اگر ایده‌ای برای همکاری دارید،
+با ما در ارتباط باشید.
 </p>
 </div>
 
-<div class="contactbox">
-<strong>مؤسسه فرهنگی رسانه‌ای آفتاب</strong>
-<p>همدان، ایران</p>
-<p>ایمیل: <a href="mailto:info@aftabcmi.ir">info@aftabcmi.ir</a></p>
+<div class="contact-panel">
+<h3>مؤسسه فرهنگی رسانه‌ای آفتاب</h3>
+<p>نشانی: همدان، ایران</p>
 <p>وب‌سایت: <a href="https://aftabcmi.ir">aftabcmi.ir</a></p>
+<p>ایمیل: <a href="mailto:info@aftabcmi.ir">info@aftabcmi.ir</a></p>
 </div>
 
 </div>
@@ -706,10 +941,20 @@ footer {
 
 </main>
 
+<!-- FOOTER -->
+
 <footer>
-<div class="wrap foot">
-<strong>مؤسسه فرهنگی رسانه‌ای آفتاب</strong>
-<span>اندیشه، فرهنگ، هنر و رسانه — © 2026</span>
+<div class="container footer-content">
+
+<div class="footer-brand">
+مؤسسه فرهنگی رسانه‌ای آفتاب
+<small>AFTAB CULTURAL MEDIA INSTITUTE</small>
+</div>
+
+<div class="footer-copy">
+تمامی حقوق این وب‌سایت متعلق به مؤسسه فرهنگی رسانه‌ای آفتاب است.
+</div>
+
 </div>
 </footer>
 
